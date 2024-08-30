@@ -8,7 +8,7 @@
     ],
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@latest"
+            "runtime": "vercel-php@0.7.1"
         }
     },
     "env": {
