@@ -6,6 +6,11 @@
             "dest": "/api/index.php"
         }
     ],
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.1"
+        }
+    },
     "env": {
         "APP_NAME": "chirper",
         "APP_ENV": "production",
