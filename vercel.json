@@ -8,13 +8,21 @@
     },
     "routes": [
         {
+            "src": "/build/(.*)",
+            "dest": "/public/build/"
+          },
+          {
+            "src": "/resources/(.*)",
+            "dest": "/public/resources/"
+          },
+          {
+            "src": "/favicon/(.*)",
+            "dest": "/public/favicon/"
+          },
+          {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        },
-        {
-            "src": "/(css|js)/(.*)",
-            "dest": "public/$1/$2"
-        }
+          }
     ],
     "env": {
         "APP_ENV": "production",
