@@ -14,7 +14,7 @@
     "env": {
         "APP_NAME": "chirper",
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_KEY": "base64:xA2Z3wToZ8pYGpmH6HwKibYuXGZmAlNtS+bG7WAuJ/U=",
         "APP_URL": "https://chirper-4rjxm6q20-berronesedwins-projects.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
