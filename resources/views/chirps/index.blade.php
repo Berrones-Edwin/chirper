@@ -1,5 +1,6 @@
 <x-app-layout>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- <livewire:counter :count=55 :name="'holaaaa'" /> -->
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
             <textarea name="message"
@@ -10,7 +11,6 @@
             </textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2"></x-input-error>
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
-
         </form>
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach($chirps as $chirp)
