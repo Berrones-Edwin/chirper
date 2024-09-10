@@ -19,7 +19,7 @@ class ChirpController extends Controller
         //
         // return response('Hello world');
         return view('chirps.index', [
-            'chirps' => Chirp::with('user')->latest()->get()
+            'chirps' => Chirp::with('user')->latest()->get(),
         ]);
     }
 
@@ -40,7 +40,6 @@ class ChirpController extends Controller
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
-
 
         $request->user()->chirps()->create($validated);
 
@@ -63,7 +62,7 @@ class ChirpController extends Controller
         Gate::authorize('update', $chirp);
 
         return view('chirps.edit', [
-            'chirp' => $chirp
+            'chirp' => $chirp,
         ]);
     }
 
@@ -75,11 +74,10 @@ class ChirpController extends Controller
         Gate::authorize('update', $chirp);
 
         $validated = $request->validate([
-            'message' => 'required|string|max:255'
+            'message' => 'required|string|max:255',
         ]);
 
         $chirp->update($validated);
-
 
         return redirect(route('chirps.index'));
     }

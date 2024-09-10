@@ -1,0 +1,12 @@
+POST http://127.0.0.1:8000/api/v1/customers
+content-type: application/json
+
+{
+    "name" :"mi name" ,
+    "type" :"B" ,
+    "email" :"myemail@gmailcom" ,
+    "city" :"mexico" ,
+}
+
+###
+GET  http://127.0.0.1:8000/api/v1/customers/245
