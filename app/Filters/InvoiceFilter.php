@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filters;
 
-class InvoiceFilter extends ApiFilter
+final class InvoiceFilter extends ApiFilter
 {
     protected $safeParams = [
         'amount' => ['eq', 'gt', 'gte', 'lt', 'lte'],

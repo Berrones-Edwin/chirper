@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filters;
 
-class CustomerFilter extends ApiFilter
+final class CustomerFilter extends ApiFilter
 {
     protected $safeParams = [
         'name' => ['eq'],

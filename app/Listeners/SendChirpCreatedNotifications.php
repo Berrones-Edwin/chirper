@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Events\ChirpCreated;
@@ -7,7 +9,7 @@ use App\Models\User;
 use App\Notifications\NewChirp;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendChirpCreatedNotifications implements ShouldQueue
+final class SendChirpCreatedNotifications implements ShouldQueue
 {
     /**
      * Create the event listener.

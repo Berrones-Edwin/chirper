@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filters;
 
 use Illuminate\Http\Request;
 
-class ApiFilter
+final class ApiFilter
 {
-    protected $safeParams = [];
+    private $safeParams = [];
 
-    protected $columnMap = [];
+    private $columnMap = [];
 
-    protected $operatorMap = [];
+    private $operatorMap = [];
 
     public function transform(Request $request)
     {

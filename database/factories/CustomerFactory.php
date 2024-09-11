@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -7,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Customer>
  */
-class CustomerFactory extends Factory
+final class CustomerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +19,7 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         $type = $this->faker->randomElement(['I', 'B']);
-        $name = $type == 'I' ? $this->faker->name() : $this->faker->company();
+        $name = $type === 'I' ? $this->faker->name() : $this->faker->company();
 
         return [
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Filters\CustomerFilter;
@@ -10,7 +12,7 @@ use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+final class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.

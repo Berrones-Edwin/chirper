@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Customer;
@@ -8,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Invoice>
  */
-class InvoiceFactory extends Factory
+final class InvoiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -25,7 +27,7 @@ class InvoiceFactory extends Factory
             'amount' => $this->faker->numberBetween(100, 200000),
             'status' => $status,
             'billed_dated' => $this->faker->dateTimeThisDecade(),
-            'paid_dated' => $status == 'P' ? $this->faker->dateTimeThisDecade() : null,
+            'paid_dated' => $status === 'P' ? $this->faker->dateTimeThisDecade() : null,
 
         ];
     }

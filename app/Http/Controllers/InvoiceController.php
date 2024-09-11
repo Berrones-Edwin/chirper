@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Filters\InvoiceFilter;
@@ -9,7 +11,7 @@ use App\Http\Resources\InvoiceCollection;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 
-class InvoiceController extends Controller
+final class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,11 +24,11 @@ class InvoiceController extends Controller
         if (count($query_items) > 0) {
 
             return new InvoiceCollection(Invoice::paginate());
-        } else {
-            $invoices = Invoice::where($query_items)->paginate();
-
-            return new InvoiceCollection($invoices->appends($request->query()));
         }
+        $invoices = Invoice::where($query_items)->paginate();
+
+        return new InvoiceCollection($invoices->appends($request->query()));
+
     }
 
     /**

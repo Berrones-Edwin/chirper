@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Policies;
 
 use App\Models\Invoice;
 use App\Models\User;
 
-class InvoicePolicy
+final class InvoicePolicy
 {
     /**
      * Determine whether the user can view any models.
