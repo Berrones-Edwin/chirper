@@ -16,25 +16,24 @@ final class InvoiceController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request): InvoiceCollection
     {
         //
         $filter = new InvoiceFilter;
         $query_items = $filter->transform($request);
-        if (count($query_items) > 0) {
+        if ($query_items !== []) {
 
             return new InvoiceCollection(Invoice::paginate());
         }
         $invoices = Invoice::where($query_items)->paginate();
 
         return new InvoiceCollection($invoices->appends($request->query()));
-
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): void
     {
         //
     }
@@ -42,7 +41,7 @@ final class InvoiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreInvoiceRequest $request)
+    public function store(StoreInvoiceRequest $request): void
     {
         //
     }
@@ -50,7 +49,7 @@ final class InvoiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Invoice $invoice)
+    public function show(Invoice $invoice): void
     {
         //
     }
@@ -58,7 +57,7 @@ final class InvoiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Invoice $invoice)
+    public function edit(Invoice $invoice): void
     {
         //
     }
@@ -66,7 +65,7 @@ final class InvoiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInvoiceRequest $request, Invoice $invoice)
+    public function update(UpdateInvoiceRequest $request, Invoice $invoice): void
     {
         //
     }
@@ -74,7 +73,7 @@ final class InvoiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Invoice $invoice)
+    public function destroy(Invoice $invoice): void
     {
         //
     }

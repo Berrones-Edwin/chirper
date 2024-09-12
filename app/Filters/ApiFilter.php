@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 
 final class ApiFilter
 {
-    private $safeParams = [];
+     private array $safeParams = [];
 
-    private $columnMap = [];
+     private array $columnMap = [];
 
-    private $operatorMap = [];
+     private array $operatorMap = [];
 
-    public function transform(Request $request)
+     /**
+      * @return mixed[][]
+      */
+    public function transform(Request $request):array
     {
         $eloQuery = [];
 
